@@ -1,36 +1,27 @@
-import React from 'react';
+import Form from "./Form";
+import card_logo from './images/card-logo.svg';
 
 function App() {
   return (
-    <div className="flex h-screen">
-      <div className="w-1/5 sm:bg-[url('./images/bg-main-mobile.png')] md:bg-[url('./images/bg-main-desktop.png')]"></div>
-      <div className="w-4/5 flex flex-col flex-wrap place-content-center">
-        <div className='mx-64'>
-          <form className='grid gap-y-5'>
-            <div className='grid'>
-              <label htmlFor="cardholder-name" className='uppercase'>Cardholder Name</label>
-              <input type="text" name="cardholder_name" id="cardholder-name" placeholder="e.g. Jane Appleseed" />
-            </div>
-            <div className='grid'>
-              <label htmlFor="card-number" className='uppercase'>Card Number</label>
-              <input type="number" name="card_number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" />
-            </div>
-            <div className='flex justify-between'>
-              <div className='grid'>
-                <label htmlFor="exp-date" className='uppercase'>Exp. Date (MM/YY)</label>
-                <div id="exp-date" className='flex gap-5'>
-                  <input type="number" name="exp-month" placeholder="MM" />
-                  <input type="number" name="exp-year" placeholder="YY" />
-                </div>
-              </div>
-              <div className='grid'>
-                <label htmlFor="cvc" className='uppercase'>CVC</label>
-                <input type="number" name="cvc" id="cvc" placeholder="e.g. 123" />
-              </div>
-            </div>
-            <button className='rounded bg-very-dark-violet text-white p-2' type="submit">Confirm</button>
-          </form>
+    <div className="relative">
+      <div className="grid absolute min-w-full justify-center">
+        <div className="bg-[url('./images/bg-card-back.png')] w-72 h-48 bg-contain bg-no-repeat ml-10 mt-8">
+        <p className="text-sm text-white mt-[68px] ml-56">000</p>
         </div>
+        <div className="bg-[url('./images/bg-card-front.png')] w-72 h-48 bg-contain bg-no-repeat -translate-y-24">
+          <img src={card_logo} alt="card logo" className="ml-4 mt-4" />
+          <div className="mt-6 mx-6">
+            <h4 className="text-xl text-white col-span-2">0000 0000 0000 0000</h4>
+            <div className="flex justify-between">
+              <p className="text-sm text-white">Jane Appleseed</p>
+              <p className="text-sm text-white">00/00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col sm:flex-row h-screen justify-between">
+        <div className="h-1/3 sm:h-screen sm:w-1/3 bg-[url('./images/bg-main-mobile.png')] sm:bg-[url('./images/bg-main-desktop.png')] bg-cover"></div>
+        <Form />
       </div>
     </div>
   );
