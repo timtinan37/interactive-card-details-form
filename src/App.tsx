@@ -1,4 +1,4 @@
-import Form from "./Form";
+import CardDetailsForm from "./CardDetailsForm";
 import card_logo from './images/card-logo.svg';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
             </div>
           </div>
         </div>
-        <Form />
+        <CardDetailsForm />
       </div>
     </>
   );
